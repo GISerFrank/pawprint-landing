@@ -1,36 +1,22 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
 
 export default function ContactSection() {
   const t = useTranslations('contact');
-  const [revealedItems, setRevealedItems] = useState<Set<string>>(new Set());
-
-  const toggleReveal = (key: string) => {
-    setRevealedItems(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(key)) {
-        newSet.delete(key);
-      } else {
-        newSet.add(key);
-      }
-      return newSet;
-    });
-  };
 
   const contactInfo = [
     {
       key: 'email',
       icon: '✉️',
-      value: 'pawprint.connection@gmail.com', // TODO: 替换为真实邮箱
-      href: 'mailto:pawprint.connection@gmail.com',
+      value: 'hello@pawprint.app', // TODO: 替换为真实邮箱
+      href: 'mailto:hello@pawprint.app',
     },
     {
       key: 'phone',
       icon: '📱',
-      value: '+1 (480) 498-1557', // TODO: 替换为真实电话
-      href: 'tel:+14804981557',
+      value: '+1 (555) 123-4567', // TODO: 替换为真实电话
+      href: 'tel:+15551234567',
     },
     {
       key: 'linkedin',
@@ -58,39 +44,21 @@ export default function ContactSection() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-          {contactInfo.map(({ key, icon, value, href }) => {
-            const isRevealed = revealedItems.has(key);
-            
-            return (
-              <div
-                key={key}
-                className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all text-center"
-              >
-                <div className="w-14 h-14 bg-gradient-to-br from-terracotta to-coral rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <span className="text-2xl">{icon}</span>
-                </div>
-                <h3 className="text-white/60 text-sm mb-2">{t(key)}</h3>
-                
-                {isRevealed ? (
-                  <a
-                    href={href}
-                    target={key === 'linkedin' ? '_blank' : undefined}
-                    rel={key === 'linkedin' ? 'noopener noreferrer' : undefined}
-                    className="text-white font-medium hover:text-coral transition-colors break-all text-sm"
-                  >
-                    {value}
-                  </a>
-                ) : (
-                  <button
-                    onClick={() => toggleReveal(key)}
-                    className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white/80 text-sm rounded-full transition-all"
-                  >
-                    Click to reveal
-                  </button>
-                )}
+          {contactInfo.map(({ key, icon, value, href }) => (
+            <a
+              key={key}
+              href={href}
+              target={key === 'linkedin' ? '_blank' : undefined}
+              rel={key === 'linkedin' ? 'noopener noreferrer' : undefined}
+              className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all text-center"
+            >
+              <div className="w-14 h-14 bg-gradient-to-br from-terracotta to-coral rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <span className="text-2xl">{icon}</span>
               </div>
-            );
-          })}
+              <h3 className="text-white/60 text-sm mb-1">{t(key)}</h3>
+              <p className="text-white font-medium break-all text-sm">{value}</p>
+            </a>
+          ))}
         </div>
 
         {/* Social follow */}

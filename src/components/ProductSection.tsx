@@ -10,7 +10,7 @@ export default function ProductSection() {
     { key: 'health', icon: '📋', color: 'from-terracotta to-coral' },
     { key: 'ai', icon: '🤖', color: 'from-sage to-deep-sage' },
     { key: 'reminders', icon: '⏰', color: 'from-gold to-terracotta' },
-    { key: 'community', icon: '🐾', color: 'from-gold to-peach' },
+    { key: 'community', icon: '🐾', color: 'from-navy to-charcoal' },
   ];
 
   return (
@@ -73,7 +73,6 @@ export default function ProductSection() {
               <div className="flex justify-center">
                 {/* Phone mockup with real screenshot */}
                 <div className="relative w-56 h-[450px] bg-charcoal rounded-[2.5rem] p-2 shadow-2xl">
-                  <div className="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-charcoal rounded-full z-10" />
                   <div className="relative w-full h-full rounded-[2rem] overflow-hidden">
                     <Image
                       src="/images/pawprint-carepage.png"

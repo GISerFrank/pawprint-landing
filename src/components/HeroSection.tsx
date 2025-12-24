@@ -45,7 +45,6 @@ export default function HeroSection() {
           {/* Illustration / App Preview */}
           <div className="relative animate-float">
             <div className="relative mx-auto w-72 h-[580px] bg-charcoal rounded-[3rem] p-3 shadow-2xl">
-              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-6 bg-charcoal rounded-full z-10" />
               <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden">
                 <Image
                   src="/images/pawprint-homepage.png"

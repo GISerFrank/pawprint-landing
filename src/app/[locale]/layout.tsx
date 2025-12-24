@@ -1,5 +1,5 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { redirect } from 'next/navigation';
 import { locales } from '@/i18n';
 import Navbar from '@/components/Navbar';
@@ -22,12 +22,13 @@ export default async function LocaleLayout({
     redirect('/en');
   }
 
-  const messages = await getMessages();
+  setRequestLocale(locale);
+  const messages = await getMessages({ locale });
 
   return (
     <html lang={locale}>
-      <body className="min-h-screen flex flex-col">
-        <NextIntlClientProvider messages={messages}>
+      <body className="min-h-screen flex flex-fold">
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />

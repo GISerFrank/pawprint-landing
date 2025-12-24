@@ -90,5 +90,24 @@
     "copyright": "© 2024 PawPrint. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
+  },
+  "showcase": {
+    "title": "Meet Our Furry Friends",
+    "subtitle": "Hover over each pet to see their health dashboard. PawPrint keeps all their important information at your fingertips.",
+    "hint": "Hover over pets to view health info",
+    "status": "Status",
+    "weight": "Weight",
+    "lastCheckup": "Last Checkup",
+    "vaccines": "Vaccines",
+    "mood": "Mood"
+  },
+  "productShowcase": {
+    "title": "Designed for Pet Parents",
+    "features": {
+      "dashboard": "Intuitive dashboard",
+      "visualizations": "Beautiful visualizations",
+      "sync": "Seamless sync across devices",
+      "darkMode": "Dark mode support"
+    }
   }
 }

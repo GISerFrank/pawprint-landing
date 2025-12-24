@@ -30,17 +30,19 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          {/* 替换开始 */}
-            <div className="relative w-16 h-16"> {/* 使用 div 包裹可以更好地控制尺寸 */}
+          <div className="flex items-center gap-2">
+            <span className="text-xl">🐾</span>
+            <div className="relative w-16 h-16">
               <Image 
                 src="/favicon.png" 
                 alt="PawPrint Logo" 
                 width={64} 
                 height={64}
-                className="object-contain" // 保持图片比例，不被拉伸
+                className="object-contain"
               />
             </div>
-            {/* 替换结束 */}
+            <span className="text-xl">🐾</span>
+          </div>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">

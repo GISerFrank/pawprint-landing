@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function AboutSection() {
   const t = useTranslations('about');
@@ -49,11 +50,13 @@ export default function AboutSection() {
           </h3>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* 左侧图片 */}
-            <div className="bg-gradient-to-br from-peach/40 to-sage/30 rounded-2xl aspect-[4/3] flex items-center justify-center border border-peach/20">
-              <div className="text-center">
-                <span className="text-5xl mb-3 block">📸</span>
-                <p className="text-charcoal/40 text-sm">Image Placeholder</p>
-              </div>
+            <div className="relative bg-gradient-to-br from-peach/40 to-sage/30 rounded-2xl aspect-[4/3] overflow-hidden border border-peach/20">
+              <Image
+                src="/images/david&potato.png"
+                alt="david&potato"
+                fill
+                className="object-cover"
+              />
             </div>
             {/* 右侧文字 */}
             <div>
@@ -74,12 +77,14 @@ export default function AboutSection() {
               </p>
             </div>
             {/* 右侧图片 */}
-            <div className="order-1 md:order-2 bg-gradient-to-br from-sage/30 to-gold/30 rounded-2xl aspect-[4/3] flex items-center justify-center border border-sage/20">
-              <div className="text-center">
-                <span className="text-5xl mb-3 block">📸</span>
-                <p className="text-charcoal/40 text-sm">Image Placeholder</p>
-              </div>
-            </div>
+          <div className="relative bg-gradient-to-br from-sage/30 to-gold/30 rounded-2xl aspect-[4/3] overflow-hidden border border-sage/20">
+            <Image
+              src="/images/frank&lilwhite.png"
+              alt="frank&lilwhite"
+              fill
+              className="object-cover"
+            />
+          </div>
           </div>
         </div>
 

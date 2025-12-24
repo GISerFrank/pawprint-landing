@@ -147,19 +147,31 @@ const PetSVG = ({ type, isHovered }: { type: string; isHovered: boolean }) => {
 
 // 健康信息卡片
 const HealthCard = ({ pet, isVisible }: { pet: Pet; isVisible: boolean }) => {
+  // 根据宠物位置决定卡片显示在左边还是右边
+  const showOnLeft = pet.position.x > 50;
+  
   return (
     <div
       className={`absolute z-20 bg-white rounded-2xl shadow-2xl p-5 w-64 border border-peach/30 transition-all duration-300 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+        isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
       }`}
       style={{
-        left: `${pet.position.x}%`,
-        top: `${pet.position.y - 35}%`,
-        transform: 'translateX(-50%)',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        ...(showOnLeft 
+          ? { right: '100%', marginRight: '20px' }
+          : { left: '100%', marginLeft: '20px' }
+        ),
       }}
     >
       {/* 小三角箭头 */}
-      <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45 border-r border-b border-peach/30" />
+      <div 
+        className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rotate-45 border-peach/30 ${
+          showOnLeft 
+            ? '-right-1.5 border-t border-r' 
+            : '-left-1.5 border-b border-l'
+        }`} 
+      />
       
       <div className="flex items-center gap-3 mb-3 pb-3 border-b border-peach/20">
         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-terracotta to-coral flex items-center justify-center text-white font-bold">

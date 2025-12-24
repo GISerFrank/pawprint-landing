@@ -42,6 +42,47 @@ export default function AboutSection() {
           </div>
         </div>
 
+        {/* Our Story */}
+        <div className="mb-16">
+          <h3 className="font-display font-bold text-2xl text-navy text-center mb-10">
+            {t('story.title')}
+          </h3>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* 左侧图片 */}
+            <div className="bg-gradient-to-br from-peach/40 to-sage/30 rounded-2xl aspect-[4/3] flex items-center justify-center border border-peach/20">
+              <div className="text-center">
+                <span className="text-5xl mb-3 block">📸</span>
+                <p className="text-charcoal/40 text-sm">Image Placeholder</p>
+              </div>
+            </div>
+            {/* 右侧文字 */}
+            <div>
+              <p className="text-charcoal/70 text-lg leading-relaxed mb-6">
+                {t('story.paragraph1')}
+              </p>
+              <p className="text-charcoal/70 text-lg leading-relaxed">
+                {t('story.paragraph2')}
+              </p>
+            </div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center mt-12">
+            {/* 左侧文字 */}
+            <div className="order-2 md:order-1">
+              <p className="text-charcoal/70 text-lg leading-relaxed">
+                {t('story.paragraph3')}
+              </p>
+            </div>
+            {/* 右侧图片 */}
+            <div className="order-1 md:order-2 bg-gradient-to-br from-sage/30 to-gold/30 rounded-2xl aspect-[4/3] flex items-center justify-center border border-sage/20">
+              <div className="text-center">
+                <span className="text-5xl mb-3 block">📸</span>
+                <p className="text-charcoal/40 text-sm">Image Placeholder</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Values */}
         <h3 className="font-display font-bold text-2xl text-navy text-center mb-8">
           {t('values.title')}

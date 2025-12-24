@@ -26,34 +26,17 @@ export default function AboutSection() {
           </p>
         </div>
 
-        {/* Mission */}
-        <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-lg mb-16 border border-peach/20">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="w-24 h-24 bg-gradient-to-br from-sage to-deep-sage rounded-2xl flex items-center justify-center flex-shrink-0">
-              <span className="text-4xl">🎯</span>
-            </div>
-            <div>
-              <h3 className="font-display font-bold text-2xl text-navy mb-3">
-                {t('mission')}
-              </h3>
-              <p className="text-charcoal/70 text-lg">
-                {t('missionText')}
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Our Story */}
         <div className="mb-16">
           <h3 className="font-display font-bold text-2xl text-navy text-center mb-10">
             {t('story.title')}
           </h3>
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* 左侧图片 - David & Potato */}
-            <div className="relative rounded-2xl aspect-[3/4] overflow-hidden border border-peach/20 shadow-lg">
+            {/* 左侧图片 */}
+            <div className="relative rounded-2xl aspect-[4/3] overflow-hidden border border-peach/20 shadow-lg">
               <Image
-                src="/images/david&potato.png"
-                alt="david&potato"
+                src="/images/frank-lilwhite.jpg"
+                alt={t('story.image1Alt')}
                 fill
                 className="object-cover"
               />
@@ -71,16 +54,16 @@ export default function AboutSection() {
           
           <div className="grid md:grid-cols-2 gap-12 items-center mt-12">
             {/* 左侧文字 */}
-            <div>
+            <div className="order-2 md:order-1">
               <p className="text-charcoal/70 text-lg leading-relaxed">
                 {t('story.paragraph3')}
               </p>
             </div>
-            {/* 右侧图片 - Frank & Lilwhite */}
-            <div className="relative rounded-2xl aspect-[3/4] overflow-hidden border border-sage/20 shadow-lg">
+            {/* 右侧图片 */}
+            <div className="order-1 md:order-2 relative rounded-2xl aspect-[4/3] overflow-hidden border border-sage/20 shadow-lg">
               <Image
-                src="/images/frank&lilwhite.png"
-                alt="frank&lilwhite"
+                src="/images/david-potato.jpg"
+                alt={t('story.image2Alt')}
                 fill
                 className="object-cover"
               />
@@ -88,7 +71,17 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Values */}
+        {/* Our Mission */}
+        <div className="mb-16">
+          <h3 className="font-display font-bold text-2xl text-navy text-center mb-6">
+            {t('mission')}
+          </h3>
+          <p className="text-charcoal/70 text-lg text-center max-w-3xl mx-auto">
+            {t('missionText')}
+          </p>
+        </div>
+
+        {/* Our Values */}
         <h3 className="font-display font-bold text-2xl text-navy text-center mb-8">
           {t('values.title')}
         </h3>

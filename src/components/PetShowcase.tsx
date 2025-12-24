@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface Pet {
   id: string;
@@ -24,10 +25,10 @@ const pets: Pet[] = [
     position: { x: 15, y: 30 },
     health: {
       status: '🟢 Excellent',
-      weight: '28 kg (Healthy)',
-      lastCheckup: 'Dec 15, 2024',
-      vaccinations: 'Up to date',
-      mood: '😊 Happy & Active',
+      weight: '28 kg',
+      lastCheckup: '2024-12-15',
+      vaccinations: '✓',
+      mood: '😊',
     },
   },
   {
@@ -37,10 +38,10 @@ const pets: Pet[] = [
     position: { x: 50, y: 45 },
     health: {
       status: '🟢 Good',
-      weight: '4.2 kg (Normal)',
-      lastCheckup: 'Nov 28, 2024',
-      vaccinations: 'Up to date',
-      mood: '😺 Playful',
+      weight: '4.2 kg',
+      lastCheckup: '2024-11-28',
+      vaccinations: '✓',
+      mood: '😺',
     },
   },
   {
@@ -49,56 +50,37 @@ const pets: Pet[] = [
     type: 'rabbit',
     position: { x: 80, y: 35 },
     health: {
-      status: '🟡 Check needed',
-      weight: '2.1 kg (Slightly low)',
-      lastCheckup: 'Oct 10, 2024',
-      vaccinations: 'Due soon',
-      mood: '🐰 Calm',
+      status: '🟡 Check',
+      weight: '2.1 kg',
+      lastCheckup: '2024-10-10',
+      vaccinations: '⚠️',
+      mood: '🐰',
     },
   },
 ];
 
-// 现代插画风宠物 SVG（统一风格）
+// SVG 宠物图形
 const PetSVG = ({ type, isHovered }: { type: string; isHovered: boolean }) => {
   const scale = isHovered ? 1.05 : 1;
-
   const commonStyle = {
     transform: `scale(${scale})`,
     transition: 'transform 0.3s ease',
   };
 
-  // 统一配色
   const colors = {
     dog: '#D6B48C',
     cat: '#9CA3AF',
     rabbit: '#EDE9D5',
-    accent: '#2F3E46',
   };
 
   if (type === 'dog') {
     return (
       <svg width="120" height="120" viewBox="0 0 120 120" style={commonStyle}>
-        {/* 身体 */}
-        <path
-          d="M30 70 Q60 90 90 70 Q85 95 60 95 Q35 95 30 70Z"
-          fill={colors.dog}
-        />
-        {/* 头 */}
-        <path
-          d="M40 55 Q60 30 80 55 Q75 75 60 75 Q45 75 40 55Z"
-          fill={colors.dog}
-        />
-        {/* 耳朵 */}
+        <path d="M30 70 Q60 90 90 70 Q85 95 60 95 Q35 95 30 70Z" fill={colors.dog} />
+        <path d="M40 55 Q60 30 80 55 Q75 75 60 75 Q45 75 40 55Z" fill={colors.dog} />
         <path d="M38 50 Q28 35 32 25 Q45 30 45 45Z" fill={colors.dog} />
         <path d="M82 50 Q92 35 88 25 Q75 30 75 45Z" fill={colors.dog} />
-        {/* 尾巴 */}
-        <path
-          d="M88 72 Q108 65 102 45"
-          stroke={colors.dog}
-          strokeWidth="6"
-          fill="none"
-          strokeLinecap="round"
-        />
+        <path d="M88 72 Q108 65 102 45" stroke={colors.dog} strokeWidth="6" fill="none" strokeLinecap="round" />
       </svg>
     );
   }
@@ -106,21 +88,11 @@ const PetSVG = ({ type, isHovered }: { type: string; isHovered: boolean }) => {
   if (type === 'cat') {
     return (
       <svg width="120" height="120" viewBox="0 0 120 120" style={commonStyle}>
-        {/* 身体 */}
         <ellipse cx="60" cy="80" rx="30" ry="22" fill={colors.cat} />
-        {/* 头 */}
         <circle cx="60" cy="50" r="22" fill={colors.cat} />
-        {/* 耳朵 */}
         <path d="M42 40 L35 20 L50 35Z" fill={colors.cat} />
         <path d="M78 40 L85 20 L70 35Z" fill={colors.cat} />
-        {/* 尾巴 */}
-        <path
-          d="M85 80 Q115 85 105 55"
-          stroke={colors.cat}
-          strokeWidth="6"
-          fill="none"
-          strokeLinecap="round"
-        />
+        <path d="M85 80 Q115 85 105 55" stroke={colors.cat} strokeWidth="6" fill="none" strokeLinecap="round" />
       </svg>
     );
   }
@@ -128,14 +100,10 @@ const PetSVG = ({ type, isHovered }: { type: string; isHovered: boolean }) => {
   if (type === 'rabbit') {
     return (
       <svg width="120" height="120" viewBox="0 0 120 120" style={commonStyle}>
-        {/* 身体 */}
         <ellipse cx="60" cy="82" rx="28" ry="22" fill={colors.rabbit} />
-        {/* 头 */}
         <circle cx="60" cy="55" r="20" fill={colors.rabbit} />
-        {/* 耳朵 */}
         <ellipse cx="48" cy="22" rx="6" ry="26" fill={colors.rabbit} />
         <ellipse cx="72" cy="22" rx="6" ry="26" fill={colors.rabbit} />
-        {/* 尾巴 */}
         <circle cx="88" cy="82" r="6" fill={colors.rabbit} />
       </svg>
     );
@@ -144,12 +112,10 @@ const PetSVG = ({ type, isHovered }: { type: string; isHovered: boolean }) => {
   return null;
 };
 
-
 // 健康信息卡片
-const HealthCard = ({ pet, isVisible }: { pet: Pet; isVisible: boolean }) => {
-  // 根据宠物位置决定卡片显示在左边还是右边
+const HealthCard = ({ pet, isVisible, t }: { pet: Pet; isVisible: boolean; t: any }) => {
   const showOnLeft = pet.position.x > 50;
-  
+
   return (
     <div
       className={`absolute z-20 bg-white rounded-2xl shadow-2xl p-5 w-64 border border-peach/30 transition-all duration-300 ${
@@ -158,21 +124,17 @@ const HealthCard = ({ pet, isVisible }: { pet: Pet; isVisible: boolean }) => {
       style={{
         top: '50%',
         transform: 'translateY(-50%)',
-        ...(showOnLeft 
+        ...(showOnLeft
           ? { right: '100%', marginRight: '20px' }
-          : { left: '100%', marginLeft: '20px' }
-        ),
+          : { left: '100%', marginLeft: '20px' }),
       }}
     >
-      {/* 小三角箭头 */}
-      <div 
+      <div
         className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rotate-45 border-peach/30 ${
-          showOnLeft 
-            ? '-right-1.5 border-t border-r' 
-            : '-left-1.5 border-b border-l'
-        }`} 
+          showOnLeft ? '-right-1.5 border-t border-r' : '-left-1.5 border-b border-l'
+        }`}
       />
-      
+
       <div className="flex items-center gap-3 mb-3 pb-3 border-b border-peach/20">
         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-terracotta to-coral flex items-center justify-center text-white font-bold">
           {pet.name[0]}
@@ -182,26 +144,26 @@ const HealthCard = ({ pet, isVisible }: { pet: Pet; isVisible: boolean }) => {
           <p className="text-xs text-charcoal/50 capitalize">{pet.type}</p>
         </div>
       </div>
-      
+
       <div className="space-y-2 text-sm">
         <div className="flex justify-between">
-          <span className="text-charcoal/60">Status</span>
+          <span className="text-charcoal/60">{t('status')}</span>
           <span className="font-medium">{pet.health.status}</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-charcoal/60">Weight</span>
+          <span className="text-charcoal/60">{t('weight')}</span>
           <span className="font-medium text-charcoal">{pet.health.weight}</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-charcoal/60">Last Checkup</span>
+          <span className="text-charcoal/60">{t('lastCheckup')}</span>
           <span className="font-medium text-charcoal">{pet.health.lastCheckup}</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-charcoal/60">Vaccines</span>
+          <span className="text-charcoal/60">{t('vaccines')}</span>
           <span className="font-medium text-sage">{pet.health.vaccinations}</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-charcoal/60">Mood</span>
+          <span className="text-charcoal/60">{t('mood')}</span>
           <span className="font-medium">{pet.health.mood}</span>
         </div>
       </div>
@@ -211,29 +173,26 @@ const HealthCard = ({ pet, isVisible }: { pet: Pet; isVisible: boolean }) => {
 
 export default function PetShowcase() {
   const [hoveredPet, setHoveredPet] = useState<string | null>(null);
+  const t = useTranslations('showcase');
 
   return (
     <section className="py-20 bg-gradient-to-b from-cream to-warm-white relative overflow-hidden">
-      {/* 背景装饰 */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-sage/20 rounded-full blur-3xl" />
       <div className="absolute bottom-10 right-10 w-40 h-40 bg-peach/30 rounded-full blur-3xl" />
-      
+
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy mb-4">
-            Meet Our Furry Friends
+            {t('title')}
           </h2>
           <p className="text-charcoal/60 max-w-xl mx-auto">
-            Hover over each pet to see their health dashboard. PawPrint keeps all their important information at your fingertips.
+            {t('subtitle')}
           </p>
         </div>
 
-        {/* 宠物展示区域 */}
         <div className="relative h-[500px] bg-gradient-to-b from-peach/10 to-sage/10 rounded-3xl border border-peach/20 overflow-hidden">
-          {/* 草地装饰 */}
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-sage/30 to-transparent" />
-          
-          {/* 云朵 */}
+
           <div className="absolute top-8 left-[20%] opacity-60">
             <svg width="80" height="40" viewBox="0 0 80 40">
               <ellipse cx="25" cy="25" rx="20" ry="12" fill="white" />
@@ -248,7 +207,6 @@ export default function PetShowcase() {
             </svg>
           </div>
 
-          {/* 宠物们 */}
           {pets.map((pet) => (
             <div
               key={pet.id}
@@ -261,34 +219,36 @@ export default function PetShowcase() {
               onMouseEnter={() => setHoveredPet(pet.id)}
               onMouseLeave={() => setHoveredPet(null)}
             >
-              {/* 阴影 */}
-              <div 
+              <div
                 className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-20 h-4 bg-black/10 rounded-full blur-sm transition-all duration-300 ${
                   hoveredPet === pet.id ? 'scale-110' : ''
                 }`}
               />
-              
-              {/* 宠物 SVG */}
+
               <PetSVG type={pet.type} isHovered={hoveredPet === pet.id} />
-              
-              {/* 名字标签 */}
-              <div className={`absolute -bottom-8 left-1/2 -translate-x-1/2 px-3 py-1 bg-white rounded-full shadow-md text-sm font-medium text-navy whitespace-nowrap transition-all duration-300 ${
-                hoveredPet === pet.id ? 'scale-110 bg-terracotta text-white' : ''
-              }`}>
+
+              <div
+                className={`absolute -bottom-8 left-1/2 -translate-x-1/2 px-3 py-1 bg-white rounded-full shadow-md text-sm font-medium text-navy whitespace-nowrap transition-all duration-300 ${
+                  hoveredPet === pet.id ? 'scale-110 bg-terracotta text-white' : ''
+                }`}
+              >
                 {pet.name}
               </div>
-              
-              {/* 健康信息卡片 */}
-              <HealthCard pet={pet} isVisible={hoveredPet === pet.id} />
+
+              <HealthCard pet={pet} isVisible={hoveredPet === pet.id} t={t} />
             </div>
           ))}
-          
-          {/* 提示文字 */}
+
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 text-charcoal/40 text-sm">
             <svg className="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
+              />
             </svg>
-            <span>Hover over pets to view health info</span>
+            <span>{t('hint')}</span>
           </div>
         </div>
       </div>

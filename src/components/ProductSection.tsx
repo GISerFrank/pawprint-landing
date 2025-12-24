@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 export default function ProductSection() {
   const t = useTranslations('product');
+  const tShowcase = useTranslations('productShowcase');
 
   const features = [
     { key: 'health', icon: '📋', color: 'from-terracotta to-coral' },
@@ -55,17 +56,17 @@ export default function ProductSection() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="font-display font-bold text-2xl sm:text-3xl text-navy mb-4">
-                  Designed for Pet Parents
+                  {tShowcase('title')}
                 </h3>
                 <ul className="space-y-4">
-                  {['Intuitive dashboard', 'Beautiful visualizations', 'Seamless sync across devices', 'Dark mode support'].map((item) => (
+                  {['dashboard', 'visualizations', 'sync', 'darkMode'].map((item) => (
                     <li key={item} className="flex items-center gap-3">
                       <span className="w-6 h-6 bg-sage rounded-full flex items-center justify-center">
                         <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </span>
-                      <span className="text-charcoal/70">{item}</span>
+                      <span className="text-charcoal/70">{tShowcase(`features.${item}`)}</span>
                     </li>
                   ))}
                 </ul>

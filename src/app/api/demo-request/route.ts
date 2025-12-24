@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { Resend } from 'resend';
 
-// TODO: 集成 Resend 发送邮件
-// npm install resend
-// import { Resend } from 'resend';
-// const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
@@ -18,22 +16,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // TODO: 发送邮件通知
-    // await resend.emails.send({
-    //   from: 'PawPrint <noreply@pawprint.app>',
-    //   to: 'your-email@example.com',
-    //   subject: `New Demo Request from ${name}`,
-    //   html: `
-    //     <h2>New Demo Request</h2>
-    //     <p><strong>Name:</strong> ${name}</p>
-    //     <p><strong>Email:</strong> ${email}</p>
-    //     <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-    //     <p><strong>Number of Pets:</strong> ${pets || 'Not specified'}</p>
-    //     <p><strong>Message:</strong> ${message || 'No message'}</p>
-    //   `,
-    // });
-
-    console.log('Demo request received:', { name, email, phone, pets, message });
+    // 发送邮件通知
+    await resend.emails.send({
+      from: 'PawPrint Demo <onboarding@resend.dev>',
+      to: 'pawprint.connection@gmail.com',
+      subject: `New Demo Request from ${name}`,
+      html: `
+        <h2>New Demo Request</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+        <p><strong>Number of Pets:</strong> ${pets || 'Not specified'}</p>
+        <p><strong>Message:</strong> ${message || 'No message'}</p>
+      `,
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {

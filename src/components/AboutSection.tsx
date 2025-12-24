@@ -35,7 +35,7 @@ export default function AboutSection() {
             {/* 左侧图片 */}
             <div className="relative rounded-2xl aspect-[4/3] overflow-hidden border border-peach/20 shadow-lg">
               <Image
-                src="/images/frank&lilwhite.png"
+                src="/images/frank&lilwhite.jpg"
                 alt={t('story.image1Alt')}
                 fill
                 className="object-cover"
@@ -62,7 +62,7 @@ export default function AboutSection() {
             {/* 右侧图片 */}
             <div className="order-1 md:order-2 relative rounded-2xl aspect-[4/3] overflow-hidden border border-sage/20 shadow-lg">
               <Image
-                src="/images/david&potato.png"
+                src="/images/david&potato.jpg"
                 alt={t('story.image2Alt')}
                 fill
                 className="object-cover"
@@ -73,12 +73,14 @@ export default function AboutSection() {
 
         {/* Our Mission */}
         <div className="mb-16">
-          <h3 className="font-display font-bold text-2xl text-navy text-center mb-6">
+          <h3 className="font-display font-bold text-2xl text-navy text-center mb-8">
             {t('mission')}
           </h3>
-          <p className="text-charcoal/70 text-lg text-center max-w-3xl mx-auto">
-            {t('missionText')}
-          </p>
+          <div className="bg-white rounded-2xl p-8 shadow-md border border-peach/10 max-w-3xl mx-auto">
+            <p className="text-charcoal/70 text-lg text-center">
+              {t('missionText')}
+            </p>
+          </div>
         </div>
 
         {/* Our Values */}

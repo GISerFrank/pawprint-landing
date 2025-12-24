@@ -31,7 +31,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           {/* 替换开始 */}
-            <div className="relative w-8 h-8"> {/* 使用 div 包裹可以更好地控制尺寸 */}
+            <div className="relative w-16 h-16"> {/* 使用 div 包裹可以更好地控制尺寸 */}
               <Image 
                 src="/favicon.png" 
                 alt="PawPrint Logo" 

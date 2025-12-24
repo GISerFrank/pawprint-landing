@@ -19,7 +19,7 @@
     "missionText": "To empower pet parents with intelligent tools that help them provide the best possible care for their beloved companions.",
     "story": {
       "title": "Our Story",
-      "paragraph1": "PawPrint was born when David's cat Potato turned 8 and started showing signs of chronic health conditions. As pet parents ourselves, we experienced firsthand the challenges of keeping track of vet appointments, medications, and health records for our aging furry friends.",
+      "paragraph1": "The story of PawPrint began with Potato, David’s beloved cat. When Potato was diagnosed with mild arthritis at age eight, it was a wake-up call. Although the condition was manageable, it highlighted a crucial truth: the importance of catching subtle health signals early and supporting our pets with science-based nutrition as they age.",
       "paragraph2": "We realized that while technology had transformed so many aspects of our lives, pet care was still stuck in the past — scattered notes, forgotten appointments, and guesswork about our pets' health.",
       "paragraph3": "Today, Frank and his cat Lilwhite, along with David and Potato, are building PawPrint to help pet parents stay on top of their pets' health with AI-powered insights, smart reminders, and a supportive community. We're just getting started on our mission to make pet care smarter and more intuitive for everyone.",
       "image1Alt": "Frank with Lilwhite",
@@ -33,7 +33,7 @@
       },
       "innovation": {
         "title": "Innovation",
-        "description": "We leverage cutting-edge AI to provide insights that were previously only available to veterinary professionals."
+        "description": "Leveraging cutting-edge AI, we empower you with vet-like insights to decode every subtle signal from your pet's body."
       },
       "community": {
         "title": "Community",
@@ -47,7 +47,7 @@
     "features": {
       "health": {
         "title": "Health Tracking",
-        "description": "Monitor weight, vaccinations, medications, and vet visits all in one place."
+        "description": "Monitor weight, calorie, vaccinations, medications, and vet visits all in one place."
       },
       "ai": {
         "title": "AI Health Analysis",
@@ -55,7 +55,7 @@
       },
       "reminders": {
         "title": "Smart Reminders",
-        "description": "Never miss a vet appointment, medication, or grooming session again."
+        "description": "Never miss a vet feeding, appointment, medication, or grooming session again."
       },
       "community": {
         "title": "Pet Community",

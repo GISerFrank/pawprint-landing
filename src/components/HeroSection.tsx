@@ -47,7 +47,7 @@ export default function HeroSection() {
             <div className="relative mx-auto w-72 h-[580px] bg-charcoal rounded-[3rem] p-3 shadow-2xl">
               <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden">
                 <Image
-                  src="/images/pawprint-homepage.png"
+                  src="/images/pawprint-homepage.jpeg"
                   alt="PawPrint App Homepage"
                   fill
                   className="object-cover"

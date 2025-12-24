@@ -9,8 +9,8 @@ export default function ContactSection() {
     {
       key: 'email',
       icon: '✉️',
-      value: 'hello@pawprint.app', // TODO: 替换为真实邮箱
-      href: 'mailto:hello@pawprint.app',
+      value: 'pawprint.connection@gmail.com', // TODO: 替换为真实邮箱
+      href: 'mailto:pawprint.connection@gmail.com',
     },
     {
       key: 'linkedin',

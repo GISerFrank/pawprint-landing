@@ -49,8 +49,8 @@ export default function AboutSection() {
             {t('story.title')}
           </h3>
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* 左侧图片 */}
-            <div className="relative bg-gradient-to-br from-peach/40 to-sage/30 rounded-2xl aspect-[4/3] overflow-hidden border border-peach/20">
+            {/* 左侧图片 - David & Potato */}
+            <div className="relative rounded-2xl aspect-[3/4] overflow-hidden border border-peach/20 shadow-lg">
               <Image
                 src="/images/david&potato.png"
                 alt="david&potato"
@@ -71,20 +71,20 @@ export default function AboutSection() {
           
           <div className="grid md:grid-cols-2 gap-12 items-center mt-12">
             {/* 左侧文字 */}
-            <div className="order-2 md:order-1">
+            <div>
               <p className="text-charcoal/70 text-lg leading-relaxed">
                 {t('story.paragraph3')}
               </p>
             </div>
-            {/* 右侧图片 */}
-          <div className="relative bg-gradient-to-br from-sage/30 to-gold/30 rounded-2xl aspect-[4/3] overflow-hidden border border-sage/20">
-            <Image
-              src="/images/frank&lilwhite.png"
-              alt="frank&lilwhite"
-              fill
-              className="object-cover"
-            />
-          </div>
+            {/* 右侧图片 - Frank & Lilwhite */}
+            <div className="relative rounded-2xl aspect-[3/4] overflow-hidden border border-sage/20 shadow-lg">
+              <Image
+                src="/images/frank&lilwhite.png"
+                alt="frank&lilwhite"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
 

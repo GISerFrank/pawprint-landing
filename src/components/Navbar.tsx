@@ -35,8 +35,8 @@ export default function Navbar() {
               <Image 
                 src="/favicon.png" 
                 alt="PawPrint Logo" 
-                width={32} 
-                height={32}
+                width={64} 
+                height={64}
                 className="object-contain" // 保持图片比例，不被拉伸
               />
             </div>

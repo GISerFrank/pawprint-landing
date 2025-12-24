@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function ProductSection() {
   const t = useTranslations('product');
@@ -70,17 +71,16 @@ export default function ProductSection() {
                 </ul>
               </div>
               <div className="flex justify-center">
-                {/* Multiple phone mockups */}
-                <div className="relative">
-                  <div className="w-48 h-96 bg-charcoal rounded-3xl p-2 shadow-xl transform -rotate-6">
-                    <div className="w-full h-full bg-cream rounded-2xl flex items-center justify-center">
-                      <span className="text-4xl">📊</span>
-                    </div>
-                  </div>
-                  <div className="absolute top-4 left-20 w-48 h-96 bg-charcoal rounded-3xl p-2 shadow-xl transform rotate-6">
-                    <div className="w-full h-full bg-cream rounded-2xl flex items-center justify-center">
-                      <span className="text-4xl">🐱</span>
-                    </div>
+                {/* Phone mockup with real screenshot */}
+                <div className="relative w-56 h-[450px] bg-charcoal rounded-[2.5rem] p-2 shadow-2xl">
+                  <div className="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-charcoal rounded-full z-10" />
+                  <div className="relative w-full h-full rounded-[2rem] overflow-hidden">
+                    <Image
+                      src="/images/pawprint-carepage.png"
+                      alt="PawPrint Care Page"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                 </div>
               </div>

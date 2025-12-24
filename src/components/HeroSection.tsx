@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function HeroSection() {
   const t = useTranslations('hero');
@@ -44,14 +45,14 @@ export default function HeroSection() {
           {/* Illustration / App Preview */}
           <div className="relative animate-float">
             <div className="relative mx-auto w-72 h-[580px] bg-charcoal rounded-[3rem] p-3 shadow-2xl">
-              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-6 bg-charcoal rounded-full" />
-              <div className="w-full h-full bg-cream rounded-[2.5rem] flex items-center justify-center overflow-hidden">
-                {/* Placeholder for app screenshot */}
-                <div className="text-center p-8">
-                  <span className="text-6xl mb-4 block">🐕</span>
-                  <p className="text-charcoal/50 text-sm">App Screenshot</p>
-                  <p className="text-charcoal/30 text-xs mt-1">Coming Soon</p>
-                </div>
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-6 bg-charcoal rounded-full z-10" />
+              <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden">
+                <Image
+                  src="/images/pawprint-homepage.png"
+                  alt="PawPrint App Homepage"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
             

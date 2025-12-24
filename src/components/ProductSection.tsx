@@ -76,7 +76,7 @@ export default function ProductSection() {
                 <div className="relative w-56 h-[450px] bg-charcoal rounded-[2.5rem] p-2 shadow-2xl">
                   <div className="relative w-full h-full rounded-[2rem] overflow-hidden">
                     <Image
-                      src="/images/pawprint-carepage.png"
+                      src="/images/pawprint-carepage.jpeg"
                       alt="PawPrint Care Page"
                       fill
                       className="object-cover"

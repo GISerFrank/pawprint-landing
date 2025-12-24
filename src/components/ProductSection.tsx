@@ -11,7 +11,7 @@ export default function ProductSection() {
     { key: 'health', icon: '📋', color: 'from-terracotta to-coral' },
     { key: 'ai', icon: '🤖', color: 'from-sage to-deep-sage' },
     { key: 'reminders', icon: '⏰', color: 'from-gold to-terracotta' },
-    { key: 'community', icon: '🐾', color: 'from-navy to-charcoal' },
+    { key: 'community', icon: '🐾', color: 'from-blue-400 to-cyan-300' },
   ];
 
   return (

@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Navbar() {
   const t = useTranslations('nav');
@@ -29,10 +30,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center gap-2">
-            <span className="text-3xl">🐾</span>
-            <span className="font-display font-bold text-xl text-navy">PawPrint</span>
-          </Link>
+          {/* 替换开始 */}
+            <div className="relative w-8 h-8"> {/* 使用 div 包裹可以更好地控制尺寸 */}
+              <Image 
+                src="/favicon.png" 
+                alt="PawPrint Logo" 
+                width={32} 
+                height={32}
+                className="object-contain" // 保持图片比例，不被拉伸
+              />
+            </div>
+            {/* 替换结束 */}
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">

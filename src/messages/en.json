@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "about": "About",
+    "product": "Product",
+    "demo": "Request Demo",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Smart Pet Care",
+    "title": "Your Pet's Health, Beautifully Tracked",
+    "subtitle": "PawPrint helps you monitor your furry friend's health, nutrition, and daily care with AI-powered insights.",
+    "cta": "Request a Demo",
+    "learnMore": "Learn More"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We're a team of pet lovers and tech enthusiasts dedicated to making pet care smarter and more intuitive.",
+    "mission": "Our Mission",
+    "missionText": "To empower pet parents with intelligent tools that help them provide the best possible care for their beloved companions.",
+    "values": {
+      "title": "Our Values",
+      "care": {
+        "title": "Care First",
+        "description": "Every feature we build starts with one question: does this help pets live healthier, happier lives?"
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We leverage cutting-edge AI to provide insights that were previously only available to veterinary professionals."
+      },
+      "community": {
+        "title": "Community",
+        "description": "We believe in the power of pet parents supporting each other through shared experiences and knowledge."
+      }
+    }
+  },
+  "product": {
+    "title": "Meet PawPrint",
+    "subtitle": "A comprehensive mobile app for modern pet parents",
+    "features": {
+      "health": {
+        "title": "Health Tracking",
+        "description": "Monitor weight, vaccinations, medications, and vet visits all in one place."
+      },
+      "ai": {
+        "title": "AI Health Analysis",
+        "description": "Get intelligent insights about your pet's health trends and potential concerns."
+      },
+      "reminders": {
+        "title": "Smart Reminders",
+        "description": "Never miss a vet appointment, medication, or grooming session again."
+      },
+      "community": {
+        "title": "Pet Community",
+        "description": "Connect with other pet parents, share tips, and collect adorable pet cards."
+      }
+    }
+  },
+  "demo": {
+    "title": "Request a Demo",
+    "subtitle": "See PawPrint in action. Fill out the form and we'll get in touch.",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "phone": "Phone Number (Optional)",
+      "pets": "How many pets do you have?",
+      "message": "Tell us about your pets",
+      "submit": "Request Demo",
+      "submitting": "Sending...",
+      "success": "Thank you! We'll be in touch soon.",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have questions? We'd love to hear from you.",
+    "email": "Email",
+    "phone": "Phone",
+    "linkedin": "LinkedIn",
+    "followUs": "Follow Us"
+  },
+  "footer": {
+    "copyright": "© 2024 PawPrint. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}

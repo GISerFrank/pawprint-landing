@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "about": "关于我们",
+    "product": "产品介绍",
+    "demo": "预约演示",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "tagline": "智能宠物护理",
+    "title": "用心记录，守护每一个爪印",
+    "subtitle": "PawPrint 帮助您追踪毛孩子的健康、营养和日常护理，提供 AI 智能分析。",
+    "cta": "预约演示",
+    "learnMore": "了解更多"
+  },
+  "about": {
+    "title": "关于我们",
+    "description": "我们是一群热爱宠物的技术爱好者，致力于让宠物护理更智能、更便捷。",
+    "mission": "我们的使命",
+    "missionText": "为宠物主人提供智能工具，帮助他们为心爱的伙伴提供最好的照顾。",
+    "values": {
+      "title": "我们的价值观",
+      "care": {
+        "title": "关爱优先",
+        "description": "我们开发的每一个功能都始于一个问题：这能帮助宠物过上更健康、更快乐的生活吗？"
+      },
+      "innovation": {
+        "title": "持续创新",
+        "description": "我们运用前沿 AI 技术，提供以往只有兽医专业人员才能获得的洞察。"
+      },
+      "community": {
+        "title": "社区互助",
+        "description": "我们相信宠物主人之间分享经验和知识的力量。"
+      }
+    }
+  },
+  "product": {
+    "title": "认识 PawPrint",
+    "subtitle": "专为现代宠物主人打造的综合移动应用",
+    "features": {
+      "health": {
+        "title": "健康追踪",
+        "description": "在一个应用中管理体重、疫苗、药物和就诊记录。"
+      },
+      "ai": {
+        "title": "AI 健康分析",
+        "description": "获取关于宠物健康趋势和潜在问题的智能洞察。"
+      },
+      "reminders": {
+        "title": "智能提醒",
+        "description": "再也不会错过任何就诊预约、用药时间或美容护理。"
+      },
+      "community": {
+        "title": "宠物社区",
+        "description": "与其他宠物主人交流，分享经验，收集可爱的宠物卡片。"
+      }
+    }
+  },
+  "demo": {
+    "title": "预约演示",
+    "subtitle": "亲眼体验 PawPrint。填写表单，我们会尽快联系您。",
+    "form": {
+      "name": "您的姓名",
+      "email": "邮箱地址",
+      "phone": "电话号码（选填）",
+      "pets": "您有几只宠物？",
+      "message": "介绍一下您的宠物",
+      "submit": "预约演示",
+      "submitting": "发送中...",
+      "success": "感谢您的提交！我们会尽快联系您。",
+      "error": "提交失败，请重试。"
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "有任何问题？我们很乐意为您解答。",
+    "email": "邮箱",
+    "phone": "电话",
+    "linkedin": "领英",
+    "followUs": "关注我们"
+  },
+  "footer": {
+    "copyright": "© 2024 PawPrint. 保留所有权利。",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  }
+}

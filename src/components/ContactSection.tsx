@@ -13,16 +13,10 @@ export default function ContactSection() {
       href: 'mailto:hello@pawprint.app',
     },
     {
-      key: 'phone',
-      icon: '📱',
-      value: '+1 (555) 123-4567', // TODO: 替换为真实电话
-      href: 'tel:+15551234567',
-    },
-    {
       key: 'linkedin',
       icon: '💼',
       value: 'PawPrint',
-      href: 'https://linkedin.com/company/pawprint', // TODO: 替换为真实链接
+      href: 'https://www.linkedin.com/company/110540375/admin/dashboard/', // TODO: 替换为真实链接
     },
   ];
 

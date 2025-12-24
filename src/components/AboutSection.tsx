@@ -35,7 +35,7 @@ export default function AboutSection() {
             {/* 左侧图片 */}
             <div className="relative rounded-2xl aspect-[4/3] overflow-hidden border border-peach/20 shadow-lg">
               <Image
-                src="/images/frank-lilwhite.jpg"
+                src="/images/frank-lilwhite.png"
                 alt={t('story.image1Alt')}
                 fill
                 className="object-cover"
@@ -62,7 +62,7 @@ export default function AboutSection() {
             {/* 右侧图片 */}
             <div className="order-1 md:order-2 relative rounded-2xl aspect-[4/3] overflow-hidden border border-sage/20 shadow-lg">
               <Image
-                src="/images/david-potato.jpg"
+                src="/images/david-potato.png"
                 alt={t('story.image2Alt')}
                 fill
                 className="object-cover"

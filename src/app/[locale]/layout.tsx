@@ -4,10 +4,22 @@ import { redirect } from 'next/navigation';
 import { locales } from '@/i18n';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { Metadata } from 'next';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
+
+// 2. <<< 新增的部分：在这里定义 metadata
+export const metadata: Metadata = {
+  title: 'PawPrint', // 你的网站标题
+  description: 'AI-powered pet health insights', // 你的网站描述
+  icons: {
+    icon: '/favicon.png', // 这里指向 public/favicon.png
+    // 如果你有苹果专用图标：
+    // apple: '/apple-touch-icon.png',
+  },
+};
 
 export default async function LocaleLayout({
   children,

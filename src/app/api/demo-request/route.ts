@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
 
     // 发送邮件通知
     await resend.emails.send({
-      from: 'PawPrint Demo <onboarding@resend.dev>',
+      from: 'PawPrint Demo <contact@send.pawprint.love>',
       to: 'pawprint.connection@gmail.com',
       subject: `New Demo Request from ${name}`,
       html: `

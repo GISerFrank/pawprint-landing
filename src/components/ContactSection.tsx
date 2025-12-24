@@ -23,8 +23,8 @@ export default function ContactSection() {
     {
       key: 'email',
       icon: '✉️',
-      value: 'pawprintconnection@gmail.com', // TODO: 替换为真实邮箱
-      href: 'mailto:pawprintconnection@gmail.com',
+      value: 'pawprint.connection@gmail.com', // TODO: 替换为真实邮箱
+      href: 'mailto:pawprint.connection@gmail.com',
     },
     {
       key: 'phone',

@@ -30,8 +30,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            {/* <span className="text-xl">🐾</span>
+          <div 
+            className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity" 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            <span className="text-xl">🐾</span>
             <div className="relative w-16 h-16">
               <Image 
                 src="/favicon.png" 
@@ -41,11 +44,7 @@ export default function Navbar() {
                 className="object-contain"
               />
             </div>
-            <span className="text-xl">🐾</span> */}
-            <Link href={`/${locale}`} className="flex items-center gap-2">
-              <span className="text-3xl">🐾</span>
-              <span className="font-display font-bold text-xl text-navy">PawPrint</span>
-            </Link>
+            <span className="text-xl">🐾</span>
           </div>
 
           {/* Desktop Nav */}

@@ -22,7 +22,7 @@ const pets: Pet[] = [
     id: 'dog',
     name: 'Max',
     type: 'dog',
-    position: { x: 15, y: 30 },
+    position: { x: 22, y: 35 },
     health: {
       status: '🟢 Excellent',
       weight: '28 kg',
@@ -35,7 +35,7 @@ const pets: Pet[] = [
     id: 'cat',
     name: 'Luna',
     type: 'cat',
-    position: { x: 50, y: 45 },
+    position: { x: 50, y: 50 },
     health: {
       status: '🟢 Good',
       weight: '4.2 kg',
@@ -48,7 +48,7 @@ const pets: Pet[] = [
     id: 'rabbit',
     name: 'Coco',
     type: 'rabbit',
-    position: { x: 80, y: 35 },
+    position: { x: 78, y: 40 },
     health: {
       status: '🟡 Check',
       weight: '2.1 kg',
@@ -114,16 +114,28 @@ const PetSVG = ({ type, isHovered }: { type: string; isHovered: boolean }) => {
 
 // 健康信息卡片
 const HealthCard = ({ pet, isVisible, t }: { pet: Pet; isVisible: boolean; t: any }) => {
+  // 根据宠物位置决定弹窗显示方向和位置
   const showOnLeft = pet.position.x > 50;
+  
+  // 计算弹窗的垂直位置，避免超出上下边界
+  const getVerticalPosition = () => {
+    if (pet.position.y < 30) {
+      return { top: '0', transform: 'translateY(0)' };
+    } else if (pet.position.y > 70) {
+      return { bottom: '0', transform: 'translateY(0)' };
+    }
+    return { top: '50%', transform: 'translateY(-50%)' };
+  };
+
+  const verticalPos = getVerticalPosition();
 
   return (
     <div
-      className={`absolute z-20 bg-white rounded-2xl shadow-2xl p-5 w-64 border border-peach/30 transition-all duration-300 ${
+      className={`absolute z-50 bg-white rounded-2xl shadow-2xl p-5 w-64 border border-peach/30 transition-all duration-300 ${
         isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
       }`}
       style={{
-        top: '50%',
-        transform: 'translateY(-50%)',
+        ...verticalPos,
         ...(showOnLeft
           ? { right: '100%', marginRight: '20px' }
           : { left: '100%', marginLeft: '20px' }),
@@ -190,7 +202,7 @@ export default function PetShowcase() {
           </p>
         </div>
 
-        <div className="relative h-[500px] bg-gradient-to-b from-peach/10 to-sage/10 rounded-3xl border border-peach/20 overflow-hidden">
+        <div className="relative h-[500px] bg-gradient-to-b from-peach/10 to-sage/10 rounded-3xl border border-peach/20">
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-sage/30 to-transparent" />
 
           <div className="absolute top-8 left-[20%] opacity-60">

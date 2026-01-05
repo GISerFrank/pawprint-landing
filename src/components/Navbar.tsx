@@ -35,16 +35,6 @@ export default function Navbar() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <span className="text-xl">🐾</span>
-            <div className="relative w-16 h-16">
-              <Image 
-                src="/favicon.png" 
-                alt="PawPrint Logo" 
-                width={64} 
-                height={64}
-                className="object-contain"
-              />
-            </div>
-            <span className="text-xl">🐾</span>
           </div>
 
           {/* Desktop Nav */}

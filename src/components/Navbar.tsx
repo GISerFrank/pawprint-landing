@@ -34,7 +34,7 @@ export default function Navbar() {
             className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity" 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <span className="text-4xl">🐾</span>
+            <span className="text-4xl">🐾 PawPrint</span>
           </div>
 
           {/* Desktop Nav */}

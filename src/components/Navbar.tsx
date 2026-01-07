@@ -34,7 +34,8 @@ export default function Navbar() {
             className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity" 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <div className="relative h-10 w-auto">
+            <div className="relative h-14 w-auto flex items-center gap-1">
+              <span className="text-xl">🐾</span>
               <Image 
                 src="/pawprint-font-logo.png" 
                 alt="PawPrint Logo" 

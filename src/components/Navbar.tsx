@@ -38,8 +38,8 @@ export default function Navbar() {
               <Image 
                 src="/pawprint-font-logo.png" 
                 alt="PawPrint Logo" 
-                width={120} 
-                height={40}
+                width={180} 
+                height={60}
                 className="object-contain h-full w-auto"
                 priority
               />

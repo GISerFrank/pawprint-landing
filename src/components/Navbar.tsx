@@ -38,7 +38,7 @@ export default function Navbar() {
               <span className="text-xl">🐾</span>
               <Image 
                 src="/pawprint-font-logo.png" 
-                alt="PawPrint Logo" 
+                alt="PetPrint Logo" 
                 width={180} 
                 height={60}
                 className="object-contain h-full w-auto"
